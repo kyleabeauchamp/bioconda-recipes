@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/lh3/bwa/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - my.patch # the patch file is expected to be found in the recipe
 
 build:
   number: 4
