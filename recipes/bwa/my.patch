@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index 7151435..5e93ee9 100644
+index 7151435..559bcb2 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -1,4 +1,4 @@
@@ -13,7 +13,7 @@ index 7151435..5e93ee9 100644
  			bwtsw2_chain.o fastmap.o bwtsw2_pair.o
  PROG=		bwa
 -INCLUDES=	
-+INCLUDES="${PREFIX}/include"
++INCLUDES=-I${PREFIX}/include
  LIBS=		-lm -lz -lpthread
  SUBDIRS=	.
  
