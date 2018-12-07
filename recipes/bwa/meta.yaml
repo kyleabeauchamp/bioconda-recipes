@@ -1,12 +1,12 @@
 {% set version = "0.7.17" %}
-{% set sha256 = "980b9591b61c60042c4a39b9e31ccaad8d17ff179d44d347997825da3fdf47fd" %}
+{% set sha256 = "b96635fe965c1b3a42eaa8510d7a0eb25de56c3782aa9bd1d681afaf286df3fe" %}
 
 package:
   name: bwa
   version: {{ version }}
 
 source:
-  url: https://github.com/lh3/bwa/archive/v{{ version }}.tar.gz
+  url: https://github.com/zamaudio/bwa/archive/intel-extend-0.7.17.zip
   sha256: {{ sha256 }}
   patches:
     - my.patch # the patch file is expected to be found in the recipe
