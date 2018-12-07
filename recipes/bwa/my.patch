@@ -1,5 +1,5 @@
 diff --git a/Makefile b/Makefile
-index 3a00e05..5814c2b 100644
+index 3a00e05..0e54d5d 100644
 --- a/Makefile
 +++ b/Makefile
 @@ -1,10 +1,10 @@
@@ -8,8 +8,8 @@ index 3a00e05..5814c2b 100644
  #CC=			clang --analyze
 -CFLAGS=		-g -Wall -Wno-unused-function -O3
 -CXXFLAGS=	-g -Wall -Wno-unused-variable -O3
-+CFLAGS=		-g -Wall -Wno-unused-function -O3 -msse4.1
-+CXXFLAGS=	-g -Wall -Wno-unused-variable -O3 -msse4.1
++CFLAGS=		-g -Wall -Wno-unused-function -O3 -msse4.1 -mavx2
++CXXFLAGS=	-g -Wall -Wno-unused-variable -O3 -msse4.1 -mavx2
  WRAP_MALLOC=-DUSE_MALLOC_WRAPPERS
  AR=			ar
 -DFLAGS=		-DHAVE_PTHREAD $(WRAP_MALLOC)
