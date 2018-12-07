@@ -1,19 +1,27 @@
 diff --git a/Makefile b/Makefile
-index 7151435..559bcb2 100644
+index 7151435..b761bf6 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -1,4 +1,4 @@
+@@ -1,9 +1,9 @@
 -CC=			gcc
 +
  #CC=			clang --analyze
  CFLAGS=		-g -Wall -Wno-unused-function -O2
  WRAP_MALLOC=-DUSE_MALLOC_WRAPPERS
-@@ -11,7 +11,7 @@ AOBJS=		bwashm.o bwase.o bwaseqio.o bwtgap.o bwtaln.o bamlite.o \
+ AR=			ar
+-DFLAGS=		-DHAVE_PTHREAD $(WRAP_MALLOC)
++DFLAGS=		-DHAVE_PTHREAD $(WRAP_MALLOC) $(LDFLAGS)
+ LOBJS=		utils.o kthread.o kstring.o ksw.o bwt.o bntseq.o bwa.o bwamem.o bwamem_pair.o bwamem_extra.o malloc_wrap.o \
+ 			QSufSort.o bwt_gen.o rope.o rle.o is.o bwtindex.o
+ AOBJS=		bwashm.o bwase.o bwaseqio.o bwtgap.o bwtaln.o bamlite.o \
+@@ -11,8 +11,9 @@ AOBJS=		bwashm.o bwase.o bwaseqio.o bwtgap.o bwtaln.o bamlite.o \
  			bwtsw2_core.o bwtsw2_main.o bwtsw2_aux.o bwt_lite.o \
  			bwtsw2_chain.o fastmap.o bwtsw2_pair.o
  PROG=		bwa
 -INCLUDES=	
 +INCLUDES=-I${PREFIX}/include
  LIBS=		-lm -lz -lpthread
++$(LDFLAGS)
  SUBDIRS=	.
  
+ ifeq ($(shell uname -s),Linux)
