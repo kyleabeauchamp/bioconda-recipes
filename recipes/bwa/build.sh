@@ -2,7 +2,7 @@
 
 export C_INCLUDE_PATH=${PREFIX}/include
 export LIBRARY_PATH=${PREFIX}/lib
-export CXX_FLAGS=-std=c++11 -pthread
+export CXX_FLAGS="-std=c++11 -pthread -msse3"
 make
 mkdir -p $PREFIX/bin
 cp bwa $PREFIX/bin
